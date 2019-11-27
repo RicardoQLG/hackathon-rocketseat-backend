@@ -12,12 +12,9 @@ const mongoose = require('mongoose');
 // --------
 // import './database';
 
-mongoose.connect(
-  'mongodb+srv://OmniStack:wlt123@cluster0-jxlgi.mongodb.net/test?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-  }
-);
+mongoose.connect(process.env.DB_LINK, {
+  useNewUrlParser: true,
+});
 
 class App {
   constructor() {
