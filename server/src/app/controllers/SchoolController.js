@@ -5,15 +5,15 @@ class SchoolController {
     const where = [];
 
     if (req.query.name) {
-      where.push({ name: RegExp(`.*${req.query.name}.*`) });
+      where.push({ name: RegExp(`.*${req.query.name}.*`, 'i') });
     }
 
     if (req.query.state) {
-      where.push({ state: req.query.state });
+      where.push({ state: RegExp(`^${req.query.state}$`, 'i') });
     }
 
     if (req.query.city) {
-      where.push({ city: req.query.city });
+      where.push({ city: RegExp(`^${req.query.city}$`, 'i') });
     }
 
     let params = null;
