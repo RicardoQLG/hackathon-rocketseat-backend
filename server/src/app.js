@@ -6,9 +6,18 @@ import 'express-async-errors';
 
 import routes from './routes';
 
+const mongoose = require('mongoose');
+
 // Uncomment this line to enable database access
 // --------
 // import './database';
+
+mongoose.connect(
+  'mongodb+srv://OmniStack:wlt123@cluster0-jxlgi.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+  }
+);
 
 class App {
   constructor() {
